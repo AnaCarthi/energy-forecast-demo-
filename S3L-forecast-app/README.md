@@ -21,7 +21,7 @@ streamlit run app.py
 |---|---|
 | **Original** | The model in `forecast_core.py`: NeuralProphet, 10 changepoints, yearly/weekly/daily seasonality, temperature as a lagged regressor, 183-day horizon. Settings unchanged. |
 | **Changed (compatibility only)** | Removed an unused `trapz` import and replaced `Series.append` (both removed from current SciPy/pandas); added a PyTorch checkpoint-loading flag. |
-| **Changed (behavior)** | The hard-coded future-temperature list is replaced by each month's average from the uploaded data. The headline total is the sum of the 183 forecast days. The notebook's `yhat1` sum is still shown under *Technical details*. |
+| **Changed (behavior)** | In my original work, I exported usage data from PG&E, added temperature and organized it in a spreadsheet, then ran it through the forecasting notebook. This public version automates that preparation and adds a web interface
 
 
 ## Limitations
