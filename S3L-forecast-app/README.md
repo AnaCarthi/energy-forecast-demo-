@@ -21,9 +21,9 @@ streamlit run app.py
 |---|---|
 | **Original** | The model in `forecast_core.py`: NeuralProphet, 10 changepoints, yearly/weekly/daily seasonality, temperature as a lagged regressor, 183-day horizon. Settings unchanged. |
 | **Changed (compatibility only)** | Removed an unused `trapz` import and replaced `Series.append` (both removed from current SciPy/pandas); added a PyTorch checkpoint-loading flag. |
-| **Changed (behavior)** | In my original work, I exported usage data from PG&E, added temperature and organized it in a spreadsheet, then ran it through the forecasting notebook. This public version automates that preparation and adds a web interface
+| **Changed (behavior)** | In my original work, I exported usage data from PG&E, added temperature and organized it in a spreadsheet, then ran it through the forecasting notebook. This public version automates that preparation and adds a web interface. Note on the original total: the notebook’s “net energy consumption” summed only the model’s yhat1 column. This version sums u the yhat values for the next consecutive 183 forecast days. 
 
-Note on the original total: the notebook’s “net energy consumption” summed the model’s yhat1 column, which mostly holds fitted values for past days rather than the forecast, so the app reports the sum of the 183 forecast days instead
+
 
 
 ## Limitations
